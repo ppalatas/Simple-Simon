@@ -1,0 +1,64 @@
+body
+{
+	background-image: url('../img/collecting-stardust.gif'); 
+
+
+
+
+}
+
+.gameContainer
+{
+	width: 395px;
+	height: 395px;
+	background-color: white;
+	border-radius: 15px;
+	margin: auto 0;
+	margin-left: 370px;
+	margin-top: 118px;
+	/*position: absolute;*/
+}
+
+.arrowButtons
+{
+	width: 125px;
+	height: 125px;
+	background-color: transparent;
+	border: 2px solid white;
+	position: relative;
+	border-radius: 15px;
+	display: inline-block;
+	box-shadow: 10px 10px 5px #888;
+}
+
+.topButton
+{
+	height: 125px;
+	width: 125px;
+	background-image: url('../img/ddrUp.png');
+
+}
+
+.rightButton
+{
+	background-image: url('../img/ddrRight.png');
+}
+
+.downButton
+{
+	background-image: url('../img/ddrDown.png');	
+		
+}
+
+.leftButton
+{	
+	background-image: url('../img/ddrLeft.png');
+
+}
+
+
+.center 
+{
+	
+
+}

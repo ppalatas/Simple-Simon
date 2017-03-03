@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple Simon</title>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/SimpleSimon.css">
+	</head>
+	<body>
+		<section class="gameContainer">
+			<div class="arrowButtons"></div>
+			<div class="arrowButtons topButton"></div>
+			<div class="arrowButtons"></div>
+			<div class="arrowButtons leftButton"></div>
+			<div class="arrowButtons"></div>
+			<div class="arrowButtons rightButton"></div>
+			<div class="arrowButtons"></div>
+			<div class="arrowButtons downButton"></div>
+			<div class="arrowButtons"></div>
+		</section>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    	<script>
+    	$(document).ready(function(){
+    				
+    				// key's and value's: Up = 38,  Down = 40,   left = 37,   right = 39
+
+    		function getRandomNumber(min , max){
+    			return math.floor(math.random() * 4 ) + 1; 
+
+
+    		}
+
+
+
+
+
+
+
+
+
+
+
+    		$(".topButton").click(function(){
+    			$(".topButton").fadeOut(200)
+    			$(".topButton").fadeIn(200)
+    			console.log([]);
+    		});
+    		$(".rightButton").click(function(){
+    			$(".rightButton").fadeOut(200)
+    			$(".rightButton").fadeIn(200)
+    			console.log([]);
+    		});
+    		$(".downButton").click(function(){
+    			$(".downButton").fadeOut(200)
+    			$(".downButton").fadeIn(200)
+    			console.log([]);
+    		});
+    		$(".leftButton").click(function(){
+    			$(".leftButton").fadeOut(200)
+    			$(".leftButton").fadeIn(200)
+    			console.log([]);
+    		});
+    	});
+    	</script>
+
+
+
+
+
+
+
+
+
+
+	</body>
+</html>
+       

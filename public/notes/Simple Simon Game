@@ -1,0 +1,108 @@
+Simple Simon Game
+
+	- no code can be commented out- if so it will be counted as incomplete. 
+
+	- make sure all global and scoped variables are seperated into two groups. 
+
+	- clean code
+
+	- make sure the right code is used in the right spaces ...
+
+	- frequently committing the project throughout the project. Make sure that you commit after every addition of a new function or application etc 
+
+	- make sure there are comments on the script 
+
+		REFERENCE THE GRADING SHEET FOR MORE DETAILED PARAMETERS
+
+
+
+******* Notes and Features That I want ***********
+Game Description 
+
+Simple Simon is a game where you watch a pattern and try to replicate it in order to get to the next round. 
+
+click the start game button and the first patter will show starting off at 1 flashing button and then  
+
+Styling:
+background - moving background 
+
+Create Three Buttons: 
+	One will be named Alex ---- click function when clicked it will change the background to a background that alex would like. 
+	click function will also be linked to music that Alex would like. 
+
+	Second Button will be named natalia, so when she clicks it the background will change to a princess/girly background. click fucntion will also be linked to a different type of music. 
+
+	Third button will be clicked to start the game. click function will be added to run the first loop of the random pattern using some kind of % loop/ switch statement?  
+
+
+
+Interactivity:
+	create a container to hold the four squares 
+
+	create a box class to put inside of four <div>'s 
+
+	create specific classes for the colors of the boxes and additional styling wanted 
+
+	create click functions for the buttons to light up (change color fade in when clicked and/or look up a click statement that will allow the button to become brighter. 
+
+	Create a loop that will run through the variables of the buttons while randomizing a pattern. 
+
+	Create and If/ Else statement that will say if buttons are clicked in the correct order, they will continue with the new extended pattern. ---- link the up, down, left, right and space bar keys to the boxes that are clicked.
+
+		console.log the buttons that are clicked ---- need to create an array that will show the index pattern and match it with the original pattern shown. if (i == ) 
+
+			create click functions for the buttons to light up (change color fade in when clicked and/or look up a click statement that will allow the button to become brighter. 
+
+				*** Reference konami code that was previously created for getting the key stroke designation and syntax for linking it to interactivity ***
+
+	If pattern is correct, fade in html saying that you have made it to round 2, 3, 4, 5... etc .... set delay for fade out and next rounds start up of patterns 
+
+VARIABLES: 
+
+	Buttons clicked for Simon Game 
+		Global
+			var leftButton
+			var rightButton
+			var upButton
+			var downButton
+
+	Start Game/Continue to Next Round 
+	
+	Global
+
+		var start
+		var next
+
+		var failed 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
