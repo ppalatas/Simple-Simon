@@ -21,7 +21,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     	<script>
     	$(document).ready(function(){
-    		var sequenceArray = ["up","right","down", "left"];
+    		var sequenceArray = [];
 
 
     		function getRandomNumberBetween0And(){
@@ -31,100 +31,113 @@
     		
     		function animate(element){
     			$(element).animate({
-    				opacity: .25
+    				opacity: 1
+
 
     			}, 500, function(){
     				$(element).animate({
-    					opacity: 1
+    					opacity: .25
     				});
     			});
     		}
 
-    		function simonsArray(input){
-    			var squares = ["up", "right", "down", "left"]; 
+            function gameover(){
+               alert("Game Over");
+               sequenceArray = [];
+            }
 
-    			var randomIndex = getRandomNumberBetween0And();
-	
-    			var randomSquare = squares[randomIndex];
+            var counter = 0;
 
-    			console.log(randomSquare);
+            function compareMove(usersTurn){
+                console.log("users turn: " + usersTurn);
+                console.log("sequence: " + sequenceArray[counter]);
+               if (usersTurn != sequenceArray[counter]){
+                   
+                   gameover();
+               } else if (usersTurn == sequenceArray[counter] && counter == (sequenceArray.length -1)){
+                    console.log(usersTurn);
+                    counter = 0;
+                    simonsArray();
+               } else {
+                   counter++;
+               }
+    
+            }
 
-    			sequenceArray.push(randomSquare);
+            function simonsArray(input){
+                var squares = ["topButton", "rightButton", "downButton", "leftButton"]; 
+        
+                var randomIndex = getRandomNumberBetween0And();
+            
+                var randomSquare = squares[randomIndex];
+        
+                console.log(randomSquare);
+        
+                sequenceArray.push(randomSquare);
+        
+                var i = 0;
+                var intervalId = setInterval(function(){
+                    
+                    switch (sequenceArray[i]){
+                        case "topButton": 
+                            animate('#topButton');
+                            break;
+                        case "rightButton":
+                            animate('#rightButton');
+                            break;
+                        case "downButton":
+                            animate('#downButton');
+                            break;
+                        case "leftButton":
+                            animate('#leftButton');
+                            break;
+                    }
+        
+                    if(i < sequenceArray.length){
+                        i++;
 
-    			var i = 0;
-    			var intervalId = setInterval(function(){
-    				sequenceArray
-    				switch (sequenceArray[i]){
-    					case "up": 
-    						animate('#topButton');
-    						break;
-    					case "right":
-    						animate('#rightButton');
-    						break;
-    					case "down":
-    						animate('#downButton');
-    						break;
-    					case "left":
-    						animate('#leftButton');
-    						break;
-    				}
+                    } else {
 
-    				if(i < sequenceArray.length){
-	    				i++;
-					} else {
-						clearInterval(intervalId);
-					}
-    			}, 1000);
-    		}
+                        clearInterval(intervalId);
+                    }
 
-    		simonsArray();
-
-    			// function playSimonSequence(simonSequence){
-    			
-    			// 	// call animate on  on simonSequence[i] every 200ms 
-    			// }
-
-    			// function simonsMove (){
-    			// 	if (simonsTurn === true){
-    			// 		$("#squares[i]")
-    			// 	}
-
-    			// }
-
-
+                }, 1000);
+            }
+    
+            simonsArray();
 
 
 
-    		// this function is currently console.logging the string that is chosen at random. 
-    		// What do I need to do: 
-    		// Create an empty array for the randomSquare to be inputted to. 
-    		// I need to limit the amount of numbers allowed in the array for each round.
-    		// Set up an event/animate that will make the buttons .fadeOut(200) and .fadeIn(200) when Simon console.logs the random number (array/string) in the array. 
 
-    		// Add a seperate function that will run after Simons turn. This function should relay information back to simon in the console log. ** An if else statement should be created in order to ensure the user clicked the arrows in the correct sequence. An alert/click/animate event can be added to show a cool feature or play a noise if the user fails and/or passes the level. 
+            
+            // I need to limit the amount of numbers allowed in the array for each round.
+            
 
-    		//*** create a var returnedPattern = randomSquare 
+            // Add a seperate function that will run after Simons turn. This function should relay information back to simon in the console log. ** An if else statement should be created in order to ensure the user clicked the arrows in the correct sequence. An alert/click/animate event can be added to show a cool feature or play a noise if the user fails and/or passes the level. 
 
-    		// The console.logged information returned should be logged into a variable 
-    		// The variable should be the array that was returned + randomSquare (for the iteration/round to start). 
-    		// This function should console.log the numbers Something like line 56 - 83 Below.    	
-    		// $(document).ready(function(){
-	    	// 	var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-	    	// 	var cheat = [];
+            // var roundTwo = simonsArray + randomSquare 
 
-	    	// var i = 0;
-	    	// if the class name of the element the user chose matches simonSequence[i]
-	    	// i++;
-	    	// else simonSequence = []
+            // The console.logged information returned should be logged into a variable 
+            // The variable should be the array that was returned + randomSquare (for the iteration/round to start). 
+            // This function should console.log the numbers Something like line 56 - 83 Below.      
+            // $(document).ready(function(){
+            //  var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+            //  var cheat = [];
 
-	    	// simonSequence.push(randomSquare());
-	    	// simonSequence[0] == playerSequence[0]
+            // var i = 0;
+            // if the class name of the element the user chose matches simonSequence[i]
+            // i++;
+            // else simonSequence = []
 
-    		$(".button").click(function(){
-    			animate("#" + $(this).attr("id"));
+            // simonSequence.push(randomSquare());
+            // simonSequence[0] == playerSequence[0]
 
-    			console.log();
-    		});
+            $(".button").click(function(){
+                animate("#" + $(this).attr("id"));
+                compareMove($(this).attr("id"));
+
+                console.log();
+            });
     		
     	});
     	</script>

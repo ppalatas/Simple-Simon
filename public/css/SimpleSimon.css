@@ -1,10 +1,10 @@
 body
 {
 	background-image: url('../img/giphy.gif'); 
-
-
-
-
+}
+.gameover
+{
+	background-color: black
 }
 
 .gameContainer
@@ -19,6 +19,19 @@ body
 	/*position: absolute;*/
 }
 
+/*button
+{
+	width: 100px;
+	height: 100px;
+	background: transparent;
+	text-align: center;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	position: relative;
+	in
+}*/
+
 .arrowButtons
 {
 	width: 125px;
@@ -28,7 +41,7 @@ body
 	position: relative;
 	border-radius: 15px;
 	display: inline-block;
-	box-shadow: 10px 10px 5px #2F1847;
+/*	box-shadow: 10px 10px 5px #2F1847;*/
 }
 
 #topButton
@@ -37,22 +50,30 @@ body
 	width: 125px;
 	background-image: url('../img/ddrUp.png');
 
+	box-shadow: 10px 10px 5px blue;
+
 }
 
 #rightButton
 {
 	background-image: url('../img/ddrRight.png');
+		box-shadow: 10px 10px 5px yellow;
+
+
 }
 
 #downButton
 {
-	background-image: url('../img/ddrDown.png');	
+	background-image: url('../img/ddrDown.png');
+	box-shadow: 10px 10px 5px green;
+
 		
 }
 
 #leftButton
 {	
 	background-image: url('../img/ddrLeft.png');
+	box-shadow: 10px 10px 5px red;
 
 }
 
@@ -70,6 +91,5 @@ body
 
 .center 
 {
-	
 
 }
