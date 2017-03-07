@@ -10,15 +10,15 @@
         <button type="submit" id="start">START</button>
         <div id="gameOver">GAME OVER</div>
 		<section class="gameContainer">
-			<div class="arrowButtons"></div>
+			<div class="arrowButtons arrowButton1"></div>
 			<div class="arrowButtons button" id="topButton"></div>
-			<div class="arrowButtons"></div>
+			<div class="arrowButtons arrowButton2"></div>
 			<div class="arrowButtons button" id="leftButton"></div>
-			<div class="arrowButtons"></div>
+			<div class="arrowButtons arrowButton3"></div>
 			<div class="arrowButtons button" id="rightButton"></div>
-			<div class="arrowButtons"></div>
+			<div class="arrowButtons arrowButton4"></div>
 			<div class="arrowButtons button" id="downButton"></div>
-			<div class="arrowButtons"></div>
+			<div class="arrowButtons arrowButton5"></div>
 		</section>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     	<script>
@@ -53,8 +53,12 @@
                 // Game Over is displayed when the user gets the sequence wrong. 
                 function gameover(){
 
+                    // Plays Sonic Game Over music.
+                    var audio = new Audio('../audio/GameOver.mp3');
+                    audio.play();
                     $("#gameOver").addClass('fadeIn');
 
+                    //Reset the sequenceArray to empty.
                     sequenceArray = [];
                     console.log("Game Over, Counter: " + counter);
                     console.log (sequenceArray + "Game Over");

@@ -35,7 +35,7 @@ body
 
 .fadeIn{
 	animation: fadeIn;
-	animation-duration: 2s;
+	animation-duration: 9s;
 }
 
 @keyframes fadeIn{
@@ -80,6 +80,78 @@ body
 	position: relative;
 	border-radius: 15px;
 	display: inline-block;
+
+}
+
+.arrowButton1
+{
+	width: 125px;
+	height: 125px;
+	background-color: transparent;
+	border: 2px solid white;
+	position: relative;
+	border-radius: 15px;
+	display: inline-block;
+	background-image: url('../img/fire.png');
+	background-image: hidden;
+
+}
+
+.arrowButton2
+{
+	width: 125px;
+	height: 125px;
+	background-color: transparent;
+	border: 2px solid white;
+	position: relative;
+	border-radius: 15px;
+	display: inline-block;
+	background-image: url('../img/fire.png');
+	background-image: hidden;
+
+
+}
+
+.arrowButton3
+{
+	width: 125px;
+	height: 125px;
+	background-color: transparent;
+	border: 2px solid white;
+	position: relative;
+	border-radius: 15px;
+	display: inline-block;
+	background-image: url('../img/fire.png');
+	background-image: hidden;
+
+
+}
+
+.arrowButton4
+{
+	width: 125px;
+	height: 125px;
+	background-color: transparent;
+	border: 2px solid white;
+	position: relative;
+	border-radius: 15px;
+	display: inline-block;
+	background-image: url('../img/fire.png');
+	background-image: hidden;
+
+}
+
+.arrowButton5
+{
+	width: 125px;
+	height: 125px;
+	background-color: transparent;
+	border: 2px solid white;
+	position: relative;
+	border-radius: 15px;
+	display: inline-block;
+	background-image: url('../img/fire.png');
+	background-image: hidden;
 
 }
 
