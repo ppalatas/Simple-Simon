@@ -8,6 +8,7 @@
 	</head>
 	<body>
         <button type="submit" id="start">START</button>
+        <div id="gameOver">GAME OVER</div>
 		<section class="gameContainer">
 			<div class="arrowButtons"></div>
 			<div class="arrowButtons button" id="topButton"></div>
@@ -22,103 +23,116 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     	<script>
     	$(document).ready(function(){
-    		var sequenceArray = [];
+    		$("#start").click(function(){
+            $("#start").fadeOut(1000);
+               
+            var sequenceArray = [];
 
     		function getRandomNumberBetween0And(){
-    			return Math.floor(Math.random() * 4) + 1;
+                
+                var num = Math.floor(Math.random() * 4);
+                console.log(num);
+    		  	return num;
     		}
-
-    		
+    
+    		  
     		function animate(element){
-    			$(element).animate({
-    				opacity: .20
-    
-    			}, 500).animate({
-    					opacity: 1
-                   
-    				});
+    		  	
+                $(element).animate({
+    		  		opacity: .20
+        
+    		  	}, 500).animate({
+    		  			opacity: 1
+                       
+    		  	});
     		}
-
-            function gameover(){
-               alert("Game Over");
-               sequenceArray = [];
-            }
-
-            var counter = 0;
-
-            function compareMove(usersTurn){
-                console.log("users turn: " + usersTurn);
-                console.log("sequence: " + sequenceArray[counter]);
-               if (usersTurn != sequenceArray[counter]){
+    
+                function gameover(){
                    
-                   gameover();
-               } else if (usersTurn == sequenceArray[counter] && counter == (sequenceArray.length -1)){
-                    console.log(usersTurn);
-                    counter = 0;
-                    simonsArray();
-               } else {
-                   counter++;
-               }
+                    $("#gameOver").addClass('fadeIn');
+                    sequenceArray = [];
+                    $("#start").fadeIn(5000);
+                }
     
-            }
-
-            function simonsArray(input){
-                var squares = ["topButton", "rightButton", "downButton", "leftButton"]; 
-        
-                var randomIndex = getRandomNumberBetween0And();
-            
-                var randomSquare = squares[randomIndex];
-        
-                console.log(randomSquare);
-        
-                sequenceArray.push(randomSquare);
-        
-                var i = 0;
-                var intervalId = setInterval(function(){
+                var counter = 0;
+    
+                function compareMove(usersTurn){
                     
-                    switch (sequenceArray[i]){
-                        case "topButton": 
-                            animate('#topButton');
-                            break;
-                        case "rightButton":
-                            animate('#rightButton');
-                            break;
-                        case "downButton":
-                            animate('#downButton');
-                            break;
-                        case "leftButton":
-                            animate('#leftButton');
-                            break;
+                    console.log("users turn: " + usersTurn);
+                    console.log("sequence: " + sequenceArray[counter]);
+                    
+                    if (usersTurn != sequenceArray[counter]){
+                       
+                       gameover();
+                       // counter = 0;
+                       sequenceArray = [];
+
+                   } else {
+                        if(counter == sequenceArray.length -1){
+                            
+                            console.log(usersTurn);
+                            counter = 0;
+                            simonsArray();
+
+                        }else{
+
+                           counter++;
+                        }
                     }
-        
-                    if(i < sequenceArray.length){
-                        i++;
+                }
 
-                    } else {
-
-                        clearInterval(intervalId);
-                    }
-
-                }, 1000);
-            }
+                function simonsArray(input){
+                    var squares = ["topButton", "rightButton", "downButton", "leftButton"]; 
+            
+                    var randomIndex = getRandomNumberBetween0And();
+                
+                    var randomSquare = squares[randomIndex];
+            
+                    console.log(randomSquare);
+            
+                    sequenceArray.push(randomSquare);
+            
+                    var i = 0;
+                    var intervalId = setInterval(function(){
+                        
+                        switch (sequenceArray[i]){
+                            case "topButton": 
+                                animate('#topButton');
+                                break;
+                            case "rightButton":
+                                animate('#rightButton');
+                                break;
+                            case "downButton":
+                                animate('#downButton');
+                                break;
+                            case "leftButton":
+                                animate('#leftButton');
+                                break;
+                        }
+            
+                        if(i < sequenceArray.length){
+                            
+                            i++;
     
-            simonsArray();
-
-            $(".button").click(function(){
-                animate("#" + $(this).attr("id"));
-                compareMove($(this).attr("id"));
-
-                console.log();
+                        } else {
+    
+                            clearInterval(intervalId);
+                        }
+    
+                    }, 1000);
+                }
+        
+                simonsArray();
+    
+                $(".button").click(function(){
+                   
+                    animate("#" + $(this).attr("id"));
+                    compareMove($(this).attr("id"));
+    
+                    console.log();
+                });
             });
-
-            $("#start").click(function(){
-                $("#start").hide(1000);
-            });
-    		
     	});
-
-        // Layering a start button 
-        // start by creating a function with an animate/.click element that would allow the "Start" text to be opacity 1 and the rest of the game at .25 opacity. { When the Start text is clicked.... .hide event }  
     	</script>
 	</body>
 </html>

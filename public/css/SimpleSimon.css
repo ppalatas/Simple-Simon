@@ -5,8 +5,8 @@ body
 
 #start 
 {
-	height: 200px;
-	width:500px;
+	height: 150px;
+	width:150px;
 	font-family: "Hacked";
 	background-color: transparent;
 	border-color: transparent;
@@ -14,14 +14,47 @@ body
 	font-size: 3em;
 	text-align: center;
 	z-index: 2;
-	margin-left: 318px;
-	margin-top: 222px;
+	outline: none;
+	margin-left: 493px;
+	margin-top: 248px;
 	position:fixed;
 }
 
-.gameover
+#gameOver
 {
-	background-color: black
+	background-color: black;
+	font-family: "Hacked";
+	font-size: 16em;
+	z-index: 3;
+	color: white;
+	position: fixed;
+	margin-left: 80px;
+	margin-top: 172px;
+	visibility: hidden;
+}
+
+.fadeIn{
+	animation: fadeIn;
+	animation-duration: 2s;
+}
+
+@keyframes fadeIn{
+	0%{
+		visibility: visible;
+		opacity: 0;
+	}
+	95%{
+		visibility: visible;
+		opacity: 1;
+	}
+	100%{
+		visibility: hidden;
+	}
+}
+
+#nextRound
+{
+
 }
 
 .gameContainer
