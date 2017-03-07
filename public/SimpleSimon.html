@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/SimpleSimon.css">
 	</head>
 	<body>
+        <button type="submit" id="start">START</button>
 		<section class="gameContainer">
 			<div class="arrowButtons"></div>
 			<div class="arrowButtons button" id="topButton"></div>
@@ -23,7 +24,6 @@
     	$(document).ready(function(){
     		var sequenceArray = [];
 
-
     		function getRandomNumberBetween0And(){
     			return Math.floor(Math.random() * 4) + 1;
     		}
@@ -31,15 +31,12 @@
     		
     		function animate(element){
     			$(element).animate({
-    				opacity: .5
-                
-
-
+    				opacity: .20
+    
     			}, 500).animate({
     					opacity: 1
                    
     				});
-    			// });
     		}
 
             function gameover(){
@@ -113,8 +110,15 @@
 
                 console.log();
             });
+
+            $("#start").click(function(){
+                $("#start").hide(1000);
+            });
     		
     	});
+
+        // Layering a start button 
+        // start by creating a function with an animate/.click element that would allow the "Start" text to be opacity 1 and the rest of the game at .25 opacity. { When the Start text is clicked.... .hide event }  
     	</script>
 	</body>
 </html>

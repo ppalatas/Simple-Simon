@@ -2,6 +2,23 @@ body
 {
 	background-image: url('../img/giphy.gif'); 
 }
+
+#start 
+{
+	height: 200px;
+	width:500px;
+	font-family: "Hacked";
+	background-color: transparent;
+	border-color: transparent;
+	color: white;
+	font-size: 3em;
+	text-align: center;
+	z-index: 2;
+	margin-left: 318px;
+	margin-top: 222px;
+	position:fixed;
+}
+
 .gameover
 {
 	background-color: black
@@ -11,26 +28,15 @@ body
 {
 	width: 395px;
 	height: 395px;
-	background-color: transparent;
+	background-color: none;
+	z-index: 1;
 	border-radius: 15px;
 	margin: auto 0;
 	margin-left: 370px;
 	margin-top: 118px;
-	/*position: absolute;*/
-}
+	position: fixed;
 
-/*button
-{
-	width: 100px;
-	height: 100px;
-	background: transparent;
-	text-align: center;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-	position: relative;
-	in
-}*/
+}
 
 .arrowButtons
 {
@@ -41,7 +47,7 @@ body
 	position: relative;
 	border-radius: 15px;
 	display: inline-block;
-/*	box-shadow: 10px 10px 5px #2F1847;*/
+
 }
 
 #topButton
@@ -49,7 +55,6 @@ body
 	height: 125px;
 	width: 125px;
 	background-image: url('../img/ddrUp.png');
-
 	box-shadow: 10px 10px 5px blue;
 
 }
@@ -58,23 +63,18 @@ body
 {
 	background-image: url('../img/ddrRight.png');
 		box-shadow: 10px 10px 5px yellow;
-
-
 }
 
 #downButton
 {
 	background-image: url('../img/ddrDown.png');
 	box-shadow: 10px 10px 5px green;
-
-		
 }
 
 #leftButton
 {	
 	background-image: url('../img/ddrLeft.png');
 	box-shadow: 10px 10px 5px red;
-
 }
 
 .rotated { 
@@ -84,6 +84,7 @@ body
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
 }
+
 
 /*//$('#rotate').click(function(){
     $(this).toggleClass('rotated');
