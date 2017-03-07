@@ -31,13 +31,15 @@
     		
     		function animate(element){
     			$(element).animate({
-    				opacity: .25
+    				opacity: .5
+    				opacity: 1 
 
-    			}, 500, function(){
+    			}, 500);, function(){
     				$(element).animate({
     					opacity: 1
+    					opacity: .5
     				});
-    			});
+    			// });
     		}
 
     		function simonsArray(input){
@@ -78,47 +80,6 @@
     		}
 
     		simonsArray();
-
-    			// function playSimonSequence(simonSequence){
-    			
-    			// 	// call animate on  on simonSequence[i] every 200ms 
-    			// }
-
-    			// function simonsMove (){
-    			// 	if (simonsTurn === true){
-    			// 		$("#squares[i]")
-    			// 	}
-
-    			// }
-
-
-
-
-
-    		// this function is currently console.logging the string that is chosen at random. 
-    		// What do I need to do: 
-    		// Create an empty array for the randomSquare to be inputted to. 
-    		// I need to limit the amount of numbers allowed in the array for each round.
-    		// Set up an event/animate that will make the buttons .fadeOut(200) and .fadeIn(200) when Simon console.logs the random number (array/string) in the array. 
-
-    		// Add a seperate function that will run after Simons turn. This function should relay information back to simon in the console log. ** An if else statement should be created in order to ensure the user clicked the arrows in the correct sequence. An alert/click/animate event can be added to show a cool feature or play a noise if the user fails and/or passes the level. 
-
-    		//*** create a var returnedPattern = randomSquare 
-
-    		// The console.logged information returned should be logged into a variable 
-    		// The variable should be the array that was returned + randomSquare (for the iteration/round to start). 
-    		// This function should console.log the numbers Something like line 56 - 83 Below.    	
-    		// $(document).ready(function(){
-	    	// 	var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-	    	// 	var cheat = [];
-
-	    	// var i = 0;
-	    	// if the class name of the element the user chose matches simonSequence[i]
-	    	// i++;
-	    	// else simonSequence = []
-
-	    	// simonSequence.push(randomSquare());
-	    	// simonSequence[0] == playerSequence[0]
 
     		$(".button").click(function(){
     			animate("#" + $(this).attr("id"));
