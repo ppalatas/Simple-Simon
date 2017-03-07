@@ -10,33 +10,44 @@
         <button type="submit" id="start">START</button>
         <div id="gameOver">GAME OVER</div>
 		<section class="gameContainer">
-			<div class="arrowButtons arrowButton1"></div>
+			<div class="arrowButtons rotated arrowButton1"></div>
 			<div class="arrowButtons button" id="topButton"></div>
-			<div class="arrowButtons arrowButton2"></div>
+			<div class="arrowButtons rotated arrowButton2"></div>
 			<div class="arrowButtons button" id="leftButton"></div>
-			<div class="arrowButtons arrowButton3"></div>
+			<div class="arrowButtons rotatedarrowButton3"></div>
 			<div class="arrowButtons button" id="rightButton"></div>
-			<div class="arrowButtons arrowButton4"></div>
+			<div class="arrowButtons rotated arrowButton4"></div>
 			<div class="arrowButtons button" id="downButton"></div>
-			<div class="arrowButtons arrowButton5"></div>
+			<div class="arrowButtons rotated arrowButton5"></div>
 		</section>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     	<script>
-    	$(document).ready(function(){
-            
+    	// $(document).ready(function(){
+
+
+            // Rotates the outter block "arrow boxes"
+            // $('.arrowButtons').animate(function(){
+            // $('.arrowButtons').toggleClass('rotated');
+            // } 500);
+            var sequenceArray = [];
+
             //Start by clicking the button and set the array to empty 
             $("#start").click(function(){
 
-                var sequenceArray = [];
+                $("#gameOver").removeClass('fadeIn');
+
+                sequenceArray = [];
+
+                simonsArray();
+
                 $("#start").fadeOut(1000);
                 console.log ("First: " + sequenceArray);
+            });
 
             // Get a random Number 
     		function getRandomNumberBetween0And(){
                 
-                var num = Math.floor(Math.random() * 4);
-                console.log(num);
-    		  	return num;
+                return Math.floor(Math.random() * 4);
     		}
     
     		// Animate the arrow buttons from turning the opacity up and down on the click event.
@@ -58,11 +69,15 @@
                     audio.play();
                     $("#gameOver").addClass('fadeIn');
 
-                    //Reset the sequenceArray to empty.
-                    sequenceArray = [];
                     console.log("Game Over, Counter: " + counter);
                     console.log (sequenceArray + "Game Over");
                     $("#start").fadeIn(5000);
+
+
+                    //Reset the sequenceArray to empty.
+                    sequenceArray = [];
+                    usersTurn = [];
+
                 }
     
                 var counter = 0;
@@ -72,6 +87,7 @@
                     
                     console.log("users turn: " + usersTurn);
                     console.log("sequence: " + sequenceArray[counter]);
+                    console.log(counter);
                     
                     if (usersTurn != sequenceArray[counter]){
                        
@@ -134,15 +150,14 @@
                     }, 1000);
                 }
         
-                simonsArray();
                 
                 $(".button").click(function(){
                    
                     animate("#" + $(this).attr("id"));
                     compareMove($(this).attr("id"));
                 });
-            });
-    	});
+            
+    	// }); 
     	</script>
 	</body>
 </html>

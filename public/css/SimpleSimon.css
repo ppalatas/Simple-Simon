@@ -85,13 +85,6 @@ body
 
 .arrowButton1
 {
-	width: 125px;
-	height: 125px;
-	background-color: transparent;
-	border: 2px solid white;
-	position: relative;
-	border-radius: 15px;
-	display: inline-block;
 	background-image: url('../img/fire.png');
 	background-image: hidden;
 
@@ -99,13 +92,6 @@ body
 
 .arrowButton2
 {
-	width: 125px;
-	height: 125px;
-	background-color: transparent;
-	border: 2px solid white;
-	position: relative;
-	border-radius: 15px;
-	display: inline-block;
 	background-image: url('../img/fire.png');
 	background-image: hidden;
 
@@ -114,13 +100,6 @@ body
 
 .arrowButton3
 {
-	width: 125px;
-	height: 125px;
-	background-color: transparent;
-	border: 2px solid white;
-	position: relative;
-	border-radius: 15px;
-	display: inline-block;
 	background-image: url('../img/fire.png');
 	background-image: hidden;
 
@@ -129,13 +108,6 @@ body
 
 .arrowButton4
 {
-	width: 125px;
-	height: 125px;
-	background-color: transparent;
-	border: 2px solid white;
-	position: relative;
-	border-radius: 15px;
-	display: inline-block;
 	background-image: url('../img/fire.png');
 	background-image: hidden;
 
@@ -143,16 +115,8 @@ body
 
 .arrowButton5
 {
-	width: 125px;
-	height: 125px;
-	background-color: transparent;
-	border: 2px solid white;
-	position: relative;
-	border-radius: 15px;
-	display: inline-block;
 	background-image: url('../img/fire.png');
 	background-image: hidden;
-
 }
 
 #topButton
@@ -182,7 +146,8 @@ body
 	box-shadow: 10px 10px 5px red;
 }
 
-.rotated { 
+.rotated 
+{ 
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -o-transform: rotate(360deg);
@@ -190,10 +155,6 @@ body
     transform: rotate(360deg);
 }
 
-
-/*//$('#rotate').click(function(){
-    $(this).toggleClass('rotated');
-});*/
 
 .center 
 {
