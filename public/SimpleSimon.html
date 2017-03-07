@@ -23,11 +23,15 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     	<script>
     	$(document).ready(function(){
-    		$("#start").click(function(){
-            $("#start").fadeOut(1000);
-               
-            var sequenceArray = [];
+            
+            //Start by clicking the button and set the array to empty 
+            $("#start").click(function(){
 
+                var sequenceArray = [];
+                $("#start").fadeOut(1000);
+                console.log ("First: " + sequenceArray);
+
+            // Get a random Number 
     		function getRandomNumberBetween0And(){
                 
                 var num = Math.floor(Math.random() * 4);
@@ -35,7 +39,7 @@
     		  	return num;
     		}
     
-    		  
+    		// Animate the arrow buttons from turning the opacity up and down on the click event.
     		function animate(element){
     		  	
                 $(element).animate({
@@ -46,16 +50,20 @@
                        
     		  	});
     		}
-    
+                // Game Over is displayed when the user gets the sequence wrong. 
                 function gameover(){
-                   
+
                     $("#gameOver").addClass('fadeIn');
+
                     sequenceArray = [];
+                    console.log("Game Over, Counter: " + counter);
+                    console.log (sequenceArray + "Game Over");
                     $("#start").fadeIn(5000);
                 }
     
                 var counter = 0;
-    
+                
+                //logs the Simon's Sequence and compares the Users Input 
                 function compareMove(usersTurn){
                     
                     console.log("users turn: " + usersTurn);
@@ -64,12 +72,11 @@
                     if (usersTurn != sequenceArray[counter]){
                        
                        gameover();
-                       // counter = 0;
-                       sequenceArray = [];
-
+            
                    } else {
+
                         if(counter == sequenceArray.length -1){
-                            
+                           
                             console.log(usersTurn);
                             counter = 0;
                             simonsArray();
@@ -81,6 +88,7 @@
                     }
                 }
 
+                // Declaring variables to be used for Simon's Array 
                 function simonsArray(input){
                     var squares = ["topButton", "rightButton", "downButton", "leftButton"]; 
             
@@ -88,7 +96,7 @@
                 
                     var randomSquare = squares[randomIndex];
             
-                    console.log(randomSquare);
+                    console.log(randomSquare + 'randomSquare');
             
                     sequenceArray.push(randomSquare);
             
@@ -123,13 +131,11 @@
                 }
         
                 simonsArray();
-    
+                
                 $(".button").click(function(){
                    
                     animate("#" + $(this).attr("id"));
                     compareMove($(this).attr("id"));
-    
-                    console.log();
                 });
             });
     	});
