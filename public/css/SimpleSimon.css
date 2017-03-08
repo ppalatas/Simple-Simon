@@ -15,9 +15,9 @@ body
 	text-align: center;
 	z-index: 2;
 	outline: none;
-	margin-left: 493px;
-	margin-top: 288px;
-	position:fixed;
+	left: 32.5%;
+	top: 33%;
+	position:absolute;
 }
 
 #gameOver
@@ -70,10 +70,12 @@ body
 	background-color: none;
 	z-index: 1;
 	border-radius: 15px;
-	margin: auto 0;
-	margin-left: 370px;
+	margin: 0 27%;
+	
 	margin-top: 60px;
-	position: fixed;
+	position: absolute;
+	top: 20%;
+	left: 3%;
 }
 
 .arrowButtons
@@ -117,4 +119,38 @@ body
 { 
     -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
     transform: rotate(7deg);
+}
+
+@media (max-width: 941px) {
+	.gameContainer{
+		position: absolute;
+		left: 33%;
+	}
+}
+
+@media (max-width: 750px) {
+	.gameContainer{
+		position: absolute;
+		left: 5%;
+	}
+}
+
+@media (max-width: 700px) {
+	.gameContainer{
+		position: absolute;
+		left: 5%;
+	}
+}
+
+@media (max-width: 420px) {
+	.gameContainer{
+		position: absolute;
+		left: -16%;
+	}
+}
+@media (max-width: 400px) {
+	.gameContainer{
+		position: absolute;
+		left: -30%;
+	}
 }
