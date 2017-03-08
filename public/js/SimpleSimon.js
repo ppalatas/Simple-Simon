@@ -9,6 +9,16 @@ $(document).ready(function(){
 
     var round = 0;
 
+    var audio = new Audio('../audio/GameOver.mp3');
+
+    var audioOot = new Audio('../audio/NextRound.wav');
+
+    var squares = ["topButton", "rightButton", "downButton", "leftButton"]; 
+
+    var randomIndex = getRandomNumberBetween0And();
+    
+    var randomSquare = squares[randomIndex];
+
     //Start by clicking the button and set the array to empty 
     $("#start").click(function(){
    
@@ -43,7 +53,6 @@ $(document).ready(function(){
     function gameover(){
 
         // Plays Sonic Game Over music.
-        var audio = new Audio('../audio/GameOver.mp3');
         audio.play();
         
         $("#gameOver").addClass('fadeIn');
@@ -74,7 +83,6 @@ $(document).ready(function(){
                 round++;
                 $("#round").html("Round: " + round);
                 
-                var audioOot = new Audio('../audio/NextRound.wav');
                 audioOot.play();
                 
                 counter = 0;
@@ -91,12 +99,6 @@ $(document).ready(function(){
     // Declaring variables to be used for Simon's Array 
     function simonsArray(input){
         
-        var squares = ["topButton", "rightButton", "downButton", "leftButton"]; 
-
-        var randomIndex = getRandomNumberBetween0And();
-    
-        var randomSquare = squares[randomIndex];
-
         sequenceArray.push(randomSquare);
 
         var i = 0;
@@ -129,7 +131,7 @@ $(document).ready(function(){
    
         }, 1000);
     }
-
+    // Assign a click function for animate
     $(".button").click(function(){
        
         animate("#" + $(this).attr("id"));

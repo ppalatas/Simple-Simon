@@ -74,7 +74,6 @@ body
 	margin-left: 370px;
 	margin-top: 60px;
 	position: fixed;
-
 }
 
 .arrowButtons
@@ -86,7 +85,6 @@ body
 	position: relative;
 	border-radius: 15px;
 	display: inline-block;
-
 }
 
 #topButton
@@ -95,7 +93,6 @@ body
 	width: 125px;
 	background-image: url('../img/ddrUp.png');
 	box-shadow: 10px 10px 5px blue;
-
 }
 
 #rightButton
@@ -118,9 +115,6 @@ body
 
 .rotated 
 { 
-	-ms-transform: rotate(7deg); /* IE 9 */
     -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
     transform: rotate(7deg);
 }
-
-
