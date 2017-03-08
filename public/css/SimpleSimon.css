@@ -59,7 +59,6 @@ body
 	font-size: 4em;
 	color: white;
 	z-index: 4;
-	margin-top: 300px;
 	margin: auto;
 	font-family: "Hacked";
 }
@@ -119,10 +118,9 @@ body
 
 .rotated 
 { 
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
+	-ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
 }
+
 
