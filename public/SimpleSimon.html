@@ -9,156 +9,20 @@
 	<body>
         <button type="submit" id="start">START</button>
         <div id="gameOver">GAME OVER</div>
+        <div id="round">Round: </div>
 		<section class="gameContainer">
-			<div class="arrowButtons rotated arrowButton1"></div>
+			<div class="arrowButtons rotated"></div>
 			<div class="arrowButtons button" id="topButton"></div>
-			<div class="arrowButtons rotated arrowButton2"></div>
+			<div class="arrowButtons rotated"></div>
 			<div class="arrowButtons button" id="leftButton"></div>
-			<div class="arrowButtons rotatedarrowButton3"></div>
+			<div class="arrowButtons rotated"></div>
 			<div class="arrowButtons button" id="rightButton"></div>
-			<div class="arrowButtons rotated arrowButton4"></div>
+			<div class="arrowButtons rotated"></div>
 			<div class="arrowButtons button" id="downButton"></div>
-			<div class="arrowButtons rotated arrowButton5"></div>
-		</section>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    	<script>
-    	// $(document).ready(function(){
-
-
-            // Rotates the outter block "arrow boxes"
-            // $('.arrowButtons').animate(function(){
-            // $('.arrowButtons').toggleClass('rotated');
-            // } 500);
-            var sequenceArray = [];
-
-            //Start by clicking the button and set the array to empty 
-            $("#start").click(function(){
-
-                $("#gameOver").removeClass('fadeIn');
-
-                sequenceArray = [];
-
-                simonsArray();
-
-                $("#start").fadeOut(1000);
-                console.log ("First: " + sequenceArray);
-            });
-
-            // Get a random Number 
-    		function getRandomNumberBetween0And(){
-                
-                return Math.floor(Math.random() * 4);
-    		}
-    
-    		// Animate the arrow buttons from turning the opacity up and down on the click event.
-    		function animate(element){
-    		  	
-                $(element).animate({
-    		  		opacity: .20
-        
-    		  	}, 500).animate({
-    		  			opacity: 1
-                       
-    		  	});
-    		}
-                // Game Over is displayed when the user gets the sequence wrong. 
-                function gameover(){
-
-                    // Plays Sonic Game Over music.
-                    var audio = new Audio('../audio/GameOver.mp3');
-                    audio.play();
-                    $("#gameOver").addClass('fadeIn');
-
-                    console.log("Game Over, Counter: " + counter);
-                    console.log (sequenceArray + "Game Over");
-                    $("#start").fadeIn(5000);
-
-
-                    //Reset the sequenceArray to empty.
-                    sequenceArray = [];
-                    usersTurn = [];
-
-                }
-    
-                var counter = 0;
-                
-                //logs the Simon's Sequence and compares the Users Input 
-                function compareMove(usersTurn){
-                    
-                    console.log("users turn: " + usersTurn);
-                    console.log("sequence: " + sequenceArray[counter]);
-                    console.log(counter);
-                    
-                    if (usersTurn != sequenceArray[counter]){
-                       
-                       gameover();
-            
-                   } else {
-
-                        if(counter == sequenceArray.length -1){
-                           
-                            console.log(usersTurn);
-                            counter = 0;
-                            simonsArray();
-
-                        }else{
-
-                           counter++;
-                        }
-                    }
-                }
-
-                // Declaring variables to be used for Simon's Array 
-                function simonsArray(input){
-                    var squares = ["topButton", "rightButton", "downButton", "leftButton"]; 
-            
-                    var randomIndex = getRandomNumberBetween0And();
-                
-                    var randomSquare = squares[randomIndex];
-            
-                    console.log(randomSquare + 'randomSquare');
-            
-                    sequenceArray.push(randomSquare);
-            
-                    var i = 0;
-                    var intervalId = setInterval(function(){
-                        
-                        switch (sequenceArray[i]){
-                            case "topButton": 
-                                animate('#topButton');
-                                break;
-                            case "rightButton":
-                                animate('#rightButton');
-                                break;
-                            case "downButton":
-                                animate('#downButton');
-                                break;
-                            case "leftButton":
-                                animate('#leftButton');
-                                break;
-                        }
-            
-                        if(i < sequenceArray.length){
-                            
-                            i++;
-    
-                        } else {
-    
-                            clearInterval(intervalId);
-                        }
-    
-                    }, 1000);
-                }
-        
-                
-                $(".button").click(function(){
-                   
-                    animate("#" + $(this).attr("id"));
-                    compareMove($(this).attr("id"));
-                });
-            
-    	// }); 
-    	</script>
+            <div class="arrowButtons rotated"></div>
+        </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="/js/SimpleSimon.js"></script>
 	</body>
 </html>
        
